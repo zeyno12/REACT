@@ -24,21 +24,37 @@ const data=document.querySelector(".data")
 //     alert(bye);
 // }
 if(namevalue.trim()==="", surnamevalue.trim()==="", imagevalue.trim()==="", titlevalue.trim()==="", emailvalue.trim()==="", numbervalue.trim()===""){
-    const wp="melumat yoxdur";
-    data.innerHTML=wp;
+    const salam="melumat yoxdur";
+    hello.innerHTML=salam;
 
 }
 else {
     data.innerHTML +=`
-    <div class="data">
+    
     <div class="picture">   
         <img src="${imagevalue}" alt="${namevalue}">
     </div>
     <h3>${namevalue}</h3>
     <p>${titlevalue}</p>
-           </div>
+        
     `;
 }
+}
+const numberbtn=document.querySelector(".btn");
+if(numberbtn){
+    numberbtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const value=document.querySelector("#name").value
+        const value1=document.querySelector("#surname").value
+        const value2=document.querySelector("#image").value
+        const value3=document.querySelector("#title").value
+        const value4=document.querySelector("#email").value
+        const value5=document.querySelector("#number").value
+        const li=document.createElement("li")
+        li.textContent=value
+        const list=document.querySelector("#list")
+        list.appendChild(li)
+    })
 }
 
 submitbtn.addEventListener("click", additem);
